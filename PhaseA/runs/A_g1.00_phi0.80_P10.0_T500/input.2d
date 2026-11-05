@@ -1,0 +1,67 @@
+# A_g1.00_phi0.80_P10.0_T500: Lehmann 2024 dispersion-relation setup (see ../../README.md)
+# l_F = 29.94 um, s_L = 2.0211 m/s, tau_F = 0.0148 ms, T_track = 1183.9 K
+geometry.is_periodic = 1 0
+geometry.coord_sys   = 0
+geometry.prob_lo     = 0.0 0.0
+geometry.prob_hi     = 0.0023951302331066205 0.0005987825582766551
+peleLM.lo_bc = Interior Inflow
+peleLM.hi_bc = Interior Outflow
+
+amr.n_cell          = 1024 256
+amr.max_level       = 2
+amr.ref_ratio       = 2 2
+amr.regrid_int      = 1000000
+amr.n_error_buf     = 2 2
+amr.grid_eff        = 0.7
+amr.blocking_factor = 16
+amr.max_grid_size   = 64
+amr.refinement_indicators = band
+amr.band.in_box_lo = 0.0 2.0957389540e-04
+amr.band.in_box_hi = 0.0023951302331066205 3.8920866288e-04
+
+prob.P_mean   = 1013250.000000
+prob.standoff = -8.8327915209e-03
+prob.pertmag  = 2.9939127914e-11
+prob.pertlength = 0.0
+prob.nmodes   = 40
+prob.phases   = 0.107947934023 0.222723493548 1.893073168944 2.234593314498 5.746772650626 2.158951920272 1.689817038164 2.449510592287 5.417652543112 1.972735649456 1.552856884144 3.090401528305 1.975580579707 5.940534984198 5.690994347252 5.845542559913 4.901378586106 2.054021085841 0.028512346490 5.098666682224 4.686165978205 5.815701907305 5.652765964532 1.192444118167 2.585104211291 5.455797166108 0.471883957752 5.791381755063 4.991966806969 6.260508283424 3.620281628851 6.242614209296 1.251385828061 5.728040931932 3.453182561742 0.991262810112 2.689968596031 4.851199664520 0.416697515893 4.337893051116
+pmf.datafile  = "pmf.dat"
+
+peleLM.v = 1
+peleLM.use_wbar = 1
+transport.use_soret = 1
+peleLM.sdc_iterMax = 2
+peleLM.num_init_iter = 3
+peleLM.do_temporals = 1
+peleLM.temporal_int = 10
+peleLM.do_extremas = 1
+peleLM.fuel_name = H2
+peleLM.divu_dt_rhoMin = 0.01
+peleLM.plot_react = 0
+peleLM.deltaT_iterMax = 40
+peleLM.deltaT_tol = 1.0e-9
+peleLM.deltaT_crashIfFailing = 0
+peleLM.divu_dt_factor = 0.3
+
+amr.stop_time = 1.1850823133e-04
+amr.max_wall_time = 10.25
+amr.cfl = 0.5
+amr.dt_shrink = 0.01
+amr.dt_change_max = 1.1
+amr.plot_per = 1.4813528916e-06
+amr.check_per = 1.4813528916e-05
+amr.plot_file = plt
+amr.check_file = chk
+
+peleLM.chem_integrator = "ReactorCvode"
+peleLM.use_typ_vals_chem = 1
+ode.rtol = 1.0e-06
+ode.atol = 1.0e-05
+cvode.solve_type = denseAJ_direct
+cvode.max_order  = 4
+
+nodal_proj.verbose = 0
+nodal_proj.rtol = 1.0e-10
+nodal_proj.atol = 1.0e-10
+mac_proj.rtol = 1.0e-10
+mac_proj.atol = 1.0e-12

@@ -1,0 +1,75 @@
+# HOQ_crest_g1.00_phi0.50_P10.0_T750_q10_planar: Phase B head-on quenching (planar), see ../../make_hoq.py
+# l_F = 36.34 um, s_L = 2.0936 m/s, tau_F = 0.0174 ms, T_wall = 750.0 K
+geometry.is_periodic = 1 0
+geometry.coord_sys   = 0
+geometry.prob_lo     = 0.0 0.0
+geometry.prob_hi     = 0.00011356705325968053 0.003634145704309777
+peleLM.lo_bc = Interior NoSlipWallIsotherm
+peleLM.hi_bc = Interior Outflow
+
+amr.n_cell          = 16 512
+amr.max_level       = 2
+amr.ref_ratio       = 2 2
+amr.regrid_int      = 5
+amr.n_error_buf     = 4 4
+amr.grid_eff        = 0.7
+amr.blocking_factor = 16
+amr.max_grid_size   = 64
+amr.refinement_indicators = gradT wall
+amr.gradT.max_level = 2
+amr.gradT.adjacent_difference_greater = 22.6
+amr.gradT.field_name = temp
+amr.wall.in_box_lo = 0.0 0.0
+amr.wall.in_box_hi = 0.00011356705325968053 1.0902437113e-04
+
+prob.P_mean   = 1013250.000000
+prob.T_wall   = 750.000000
+prob.wall_lo  = 1
+prob.v_shift = 2.0936343352e+00
+prob.pertmag = 0.0
+prob.nmodes = 0
+prob.standoff = -5.9356015839e-03
+pmf.datafile  = "pmf.dat"
+
+peleLM.v = 1
+peleLM.use_wbar = 1
+transport.use_soret = 1
+peleLM.sdc_iterMax = 2
+peleLM.num_init_iter = 3
+peleLM.do_temporals = 1
+peleLM.temporal_int = 10
+peleLM.do_extremas = 1
+peleLM.fuel_name = H2
+peleLM.divu_dt_rhoMin = 0.01
+peleLM.deltaT_iterMax = 40
+peleLM.deltaT_tol = 1.0e-9
+peleLM.deltaT_crashIfFailing = 0
+peleLM.divu_dt_factor = 0.3
+peleLM.plot_react = 1
+peleLM.plot_heatRelease = 1
+amr.plot_speciesState = 1
+amr.derive_plot_vars = mass_fractions
+
+amr.stop_time = 7.8111327249e-04
+amr.max_wall_time = 11.50
+amr.cfl = 0.5
+amr.max_dt = 4.960939e-07
+amr.dt_shrink = 0.01
+amr.dt_change_max = 1.1
+amr.plot_per = 8.6790363610e-06
+amr.check_per = 3.4716145444e-05
+amr.plot_file = plt
+amr.check_file = chk
+
+peleLM.chem_integrator = "ReactorCvode"
+peleLM.use_typ_vals_chem = 1
+ode.rtol = 1.0e-6
+ode.atol = 1.0e-5
+cvode.solve_type = denseAJ_direct
+cvode.max_order  = 4
+
+nodal_proj.verbose = 0
+nodal_proj.rtol = 1.0e-10
+nodal_proj.atol = 1.0e-10
+mac_proj.rtol = 1.0e-10
+mac_proj.atol = 1.0e-12

@@ -1,0 +1,83 @@
+# B0_g0.43_phi0.40_P10.0_T750: Phase B0, unstable free flame to saturation (Schneider-type), see ../../make_b0.py
+# l_F = 230.04 um, s_L = 0.1360 m/s, tau_F = 1.6914 ms, T_track = 1125.1 K
+geometry.is_periodic = 1 0
+geometry.coord_sys   = 0
+geometry.prob_lo     = 0.0 0.0
+geometry.prob_hi     = 0.023004138823340792 0.023004138823340792
+peleLM.lo_bc = Interior Inflow
+peleLM.hi_bc = Interior Outflow
+
+amr.n_cell          = 512 512
+amr.max_level       = 2
+amr.ref_ratio       = 2 2
+amr.regrid_int      = 5
+amr.n_error_buf     = 4 4
+amr.grid_eff        = 0.7
+amr.blocking_factor = 16
+amr.max_grid_size   = 64
+amr.refinement_indicators = gradT
+amr.gradT.max_level = 2
+amr.gradT.adjacent_difference_greater = 18.8
+amr.gradT.field_name = temp
+
+prob.P_mean   = 1013250.000000
+prob.standoff = -2.3624936382e-04
+prob.pertmag  = 2.3004138823e-06
+prob.pertlength = 0.0
+prob.nmodes   = 50
+prob.phases   = 2.373585551222 3.434352744714 3.328459984236 3.849952267796 1.500273788335 5.834375460364 3.949184263319 4.155576428322 6.058226273766 0.514767647597 5.062449151791 3.029475116906 1.255666262799 2.826824003450 1.945440562161 0.713639326640 5.566811187501 0.888309739950 0.696269109771 3.956918760083 3.651812097579 3.022657818133 6.056317791973 0.634482899641 6.161060355777 0.292338439267 1.493067028848 4.528806358212 2.530573165475 2.764461142775 4.176569231117 5.790175720328 6.263750269766 4.077445548647 3.807524049277 3.044784653749 2.357862360153 5.020055901782 2.507702144690 6.179913241017 1.312878219360 5.058655494462 1.101253715219 0.036201800579 3.172770577616 0.813761240925 5.919962493356 4.903511115915 5.690677083274 1.198275083798
+pmf.datafile  = "pmf.dat"
+
+active_control.on = 1
+active_control.use_temp = 1
+active_control.temperature = 1125.1
+active_control.height = 6.9012416470e-03
+active_control.tau = 1.6913925771e-03
+active_control.changeMax = 0.002720
+active_control.velMax = 1.360071
+active_control.flow_dir = 1
+active_control.method = 1
+active_control.pseudo_gravity = 1
+active_control.v = 1
+
+peleLM.v = 1
+peleLM.use_wbar = 1
+transport.use_soret = 1
+peleLM.sdc_iterMax = 2
+peleLM.num_init_iter = 3
+peleLM.do_temporals = 1
+peleLM.temporal_int = 10
+peleLM.do_extremas = 1
+peleLM.fuel_name = H2
+peleLM.divu_dt_rhoMin = 0.01
+peleLM.deltaT_iterMax = 40
+peleLM.deltaT_tol = 1.0e-9
+peleLM.deltaT_crashIfFailing = 0
+peleLM.divu_dt_factor = 0.3
+amr.plot_speciesState = 1
+amr.derive_plot_vars = mass_fractions
+peleLM.plot_react = 1
+peleLM.plot_heatRelease = 1
+
+amr.stop_time = 5.0741777312e-02
+amr.max_wall_time = 23.50
+amr.cfl = 0.5
+amr.dt_shrink = 0.01
+amr.dt_change_max = 1.1
+amr.plot_per = 1.6913925771e-03
+amr.check_per = 3.3827851541e-03
+amr.plot_file = plt
+amr.check_file = chk
+
+peleLM.chem_integrator = "ReactorCvode"
+peleLM.use_typ_vals_chem = 1
+ode.rtol = 1.0e-6
+ode.atol = 1.0e-5
+cvode.solve_type = denseAJ_direct
+cvode.max_order  = 4
+
+nodal_proj.verbose = 0
+nodal_proj.rtol = 1.0e-10
+nodal_proj.atol = 1.0e-10
+mac_proj.rtol = 1.0e-10
+mac_proj.atol = 1.0e-12

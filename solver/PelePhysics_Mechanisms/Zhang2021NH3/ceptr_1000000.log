@@ -1,0 +1,41 @@
+Converting file /srv/lustre01/project/msdaphyik-um6p-st-msda-frgj4qkkjni/users/radouan.boukharfane/solvers/PeleLMeX/Submodules/PelePhysics/Mechanisms/Zhang2021NH3/mechanism.yaml
+N2   0   0   28.014
+H   1   1   1.008
+H2   2   2   2.016
+O   3   3   15.999
+OH   4   4   17.007
+H2O   5   5   18.015
+HO2   6   6   33.006
+H2O2   7   7   34.014
+O2   8   8   31.998
+N   9   9   14.007
+NH   10   10   15.015
+NH2   11   11   16.023
+NH3   12   12   17.031
+NNH   13   13   29.022
+N2H2   14   14   30.03
+N2H3   15   15   31.038
+N2H4   16   16   32.046
+H2NN   17   17   30.03
+NO   18   18   30.006
+N2O   19   19   44.013
+NO2   20   20   46.005
+HNO   21   21   31.014000000000003
+HON   22   22   31.014000000000003
+HONO   23   23   47.013000000000005
+H2NO   24   24   32.022
+HNOH   25   25   32.022
+NH2OH   26   26   33.03
+HNO2   27   27   47.013000000000005
+HONO2   28   28   63.012
+NO3   29   29   62.004
+HNO3   30   30   63.012
+
+WARNING: Your mechanism contains at least one PLOG reaction.
+WARNING: The compiled mechanism will only be valid for the given constant pressure. It is not applicable for compressible solvers.
+
+
+Please specify the pressure, at which you want to evaluate the rates in Pascal (1 atm = 101325.0 Pa, 1 bar = 1e5 Pa):
+plog_pressure set to 1000000.0 Pa / 10.0 bar /.
+Clang-format not found. C++ files will be hard to parse by a human.
+CEPTR run time: 1.45 s

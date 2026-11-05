@@ -1,0 +1,8 @@
+HOQ_g0.43_phi0.50_P10.0_T750_t26.0_Tw500 8223693
+HOQ_g0.43_phi0.50_P10.0_T750_t38.0_Tw500 8223694
+HOQ_crest_g0.43_phi0.50_P10.0_T750_cmean_planar 8223695
+HOQ_crest_g0.43_phi0.50_P10.0_T750_p95_planar 8223696
+HOQ_crest_g0.20_phi0.50_P10.0_T750_cmean_planar 8223697
+HOQ_crest_g0.20_phi0.50_P10.0_T750_p95_planar 8223698
+HOQ_crest_g0.75_phi0.50_P10.0_T750_cmean_planar 8223699
+HOQ_crest_g0.75_phi0.50_P10.0_T750_p95_planar 8223700

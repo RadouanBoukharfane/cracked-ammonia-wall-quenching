@@ -1,0 +1,12 @@
+HOQ_crest_g0.20_phi0.50_P10.0_T750_q10_planar 8226234
+HOQ_crest_g0.20_phi0.50_P10.0_T750_q50_planar 8226235
+HOQ_crest_g0.20_phi0.50_P10.0_T750_q90_planar 8226236
+HOQ_crest_g0.43_phi0.50_P10.0_T750_q10_planar 8226237
+HOQ_crest_g0.43_phi0.50_P10.0_T750_q50_planar 8226240
+HOQ_crest_g0.43_phi0.50_P10.0_T750_q90_planar 8226242
+HOQ_crest_g0.75_phi0.50_P10.0_T750_q10_planar 8226243
+HOQ_crest_g0.75_phi0.50_P10.0_T750_q50_planar 8226244
+HOQ_crest_g0.75_phi0.50_P10.0_T750_q90_planar 8226245
+HOQ_crest_g1.00_phi0.50_P10.0_T750_q10_planar 8226246
+HOQ_crest_g1.00_phi0.50_P10.0_T750_q50_planar 8226247
+HOQ_crest_g1.00_phi0.50_P10.0_T750_q90_planar 8226248

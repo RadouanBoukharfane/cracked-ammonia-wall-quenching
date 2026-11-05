@@ -1,0 +1,77 @@
+# HOQ_g0.20_phi0.50_P10.0_T750_t32.0: Phase B head-on quenching (unstable), see ../../make_hoq.py
+# l_F = 274.61 um, s_L = 0.1156 m/s, tau_F = 2.3760 ms, T_wall = 750.0 K
+geometry.is_periodic = 1 0
+geometry.coord_sys   = 0
+geometry.prob_lo     = 0.0 0.0
+geometry.prob_hi     = 0.027461383233779932 0.027461383233779932
+peleLM.lo_bc = Interior NoSlipWallIsotherm
+peleLM.hi_bc = Interior Outflow
+
+amr.n_cell          = 512 512
+amr.max_level       = 2
+amr.ref_ratio       = 2 2
+amr.regrid_int      = 5
+amr.n_error_buf     = 4 4
+amr.grid_eff        = 0.7
+amr.blocking_factor = 16
+amr.max_grid_size   = 64
+amr.refinement_indicators = gradT wall
+amr.gradT.max_level = 2
+amr.gradT.adjacent_difference_greater = 21.5
+amr.gradT.field_name = temp
+amr.wall.in_box_lo = 0.0 0.0
+amr.wall.in_box_hi = 0.027461383233779932 8.2384149701e-04
+
+prob.P_mean   = 1013250.000000
+prob.T_wall   = 750.000000
+prob.wall_lo  = 1
+amr.initDataPlt = ${FQ_ROOT}/PhaseB0/runs/B0_g0.20_phi0.50_P10.0_T750/plt04606
+peleLM.initDataPlt_reset_time = 1
+peleLM.initDataPlt_patch_flow_variables = 1
+prob.v_shift = 1.8339141294e-01
+prob.pertmag = 0.0
+prob.standoff = 0.0
+pmf.datafile  = "pmf.dat"
+
+peleLM.v = 1
+peleLM.use_wbar = 1
+transport.use_soret = 1
+peleLM.sdc_iterMax = 2
+peleLM.num_init_iter = 3
+peleLM.do_temporals = 1
+peleLM.temporal_int = 10
+peleLM.do_extremas = 1
+peleLM.fuel_name = H2
+peleLM.divu_dt_rhoMin = 0.01
+peleLM.deltaT_iterMax = 40
+peleLM.deltaT_tol = 1.0e-9
+peleLM.deltaT_crashIfFailing = 0
+peleLM.divu_dt_factor = 0.3
+peleLM.plot_react = 1
+peleLM.plot_heatRelease = 1
+amr.plot_speciesState = 1
+amr.derive_plot_vars = mass_fractions
+
+amr.stop_time = 7.1278855410e-02
+amr.max_wall_time = 11.50
+amr.cfl = 0.5
+amr.max_dt = 6.075633e-05
+amr.dt_shrink = 0.01
+amr.dt_change_max = 1.1
+amr.plot_per = 1.1879809235e-03
+amr.check_per = 4.7519236940e-03
+amr.plot_file = plt
+amr.check_file = chk
+
+peleLM.chem_integrator = "ReactorCvode"
+peleLM.use_typ_vals_chem = 1
+ode.rtol = 1.0e-6
+ode.atol = 1.0e-5
+cvode.solve_type = denseAJ_direct
+cvode.max_order  = 4
+
+nodal_proj.verbose = 0
+nodal_proj.rtol = 1.0e-10
+nodal_proj.atol = 1.0e-10
+mac_proj.rtol = 1.0e-10
+mac_proj.atol = 1.0e-12
